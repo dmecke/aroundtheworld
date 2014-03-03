@@ -1,37 +1,36 @@
 $(document).ready(function() {
-    console.log('ready');
-    $('#log').append('ready');
+    log('document ready');
 });
+
+function log(message) {
+    console.log(message);
+    $('#log').append('<div>' + message + '</div>');
+}
+
 // Wait for device API libraries to load
-//
 document.addEventListener("deviceready", onDeviceReady, false);
 
 // device APIs are available
-//
 function onDeviceReady() {
-    console.log('deviceready');
-    $('#log').append('deviceready');
+    log('device is ready');
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
 // onSuccess Geolocation
-//
 function onSuccess(position) {
-
+    log('geolocation onSuccess');
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({'latLng': position}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            console.log(results);
+            log(results);
             if (results[0]) {
                 var loc = getCountry(results);
-                console.log(loc);
-
+                log(loc);
             }
         }
     });
 
-    var element = document.getElementById('geolocation');
-    element.innerHTML = 'Test - Latitude: '           + position.coords.latitude              + '<br />' +
+    $('#geolocation').html('Test - Latitude: '           + position.coords.latitude              + '<br />' +
         'Longitude: '          + position.coords.longitude             + '<br />' +
         'Altitude: '           + position.coords.altitude              + '<br />' +
         'Accuracy: '           + position.coords.accuracy              + '<br />' +
@@ -39,12 +38,10 @@ function onSuccess(position) {
         'Heading: '            + position.coords.heading               + '<br />' +
         'Speed: '              + position.coords.speed                 + '<br />' +
         'Timestamp: '          + position.timestamp                    + '<br />' +
-        'Country: '            + loc                                   + '<br />';
-
+        'Country: '            + loc                                   + '<br />');
 }
 
 // onError Callback receives a PositionError object
-//
 function onError(error) {
     alert('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
