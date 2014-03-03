@@ -1,5 +1,6 @@
 $(document).ready(function() {
     console.log('ready');
+    $('#log').append('ready');
 });
 // Wait for device API libraries to load
 //
@@ -9,6 +10,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //
 function onDeviceReady() {
     console.log('deviceready');
+    $('#log').append('deviceready');
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
