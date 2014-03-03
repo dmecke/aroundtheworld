@@ -66,7 +66,6 @@ function getCountry(results)
             }
         }
     }
-
 }
 
 function isNullOrWhitespace(text) {
