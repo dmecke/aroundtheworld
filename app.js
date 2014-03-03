@@ -8,6 +8,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // device APIs are available
 //
 function onDeviceReady() {
+    console.log('deviceready');
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
