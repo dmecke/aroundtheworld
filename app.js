@@ -21,6 +21,7 @@ function onSuccess(position) {
     log('geolocation onSuccess');
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({'latLng': position}, function(results, status) {
+        log('status: ' + status);
         if (status == google.maps.GeocoderStatus.OK) {
             log(results);
             if (results[0]) {
