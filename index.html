@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Device Properties Example</title>
+        <title>Around The World</title>
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript" charset="utf-8" src="jquery.1.11.0.js"></script>
@@ -10,25 +10,7 @@
         <link rel="stylesheet" href="styles.css" type="text/css" />
     </head>
     <body>
-        <div id="list">
-            <!--<ul class="level1">-->
-                <!--<li id="level1_europe">Europe</li>-->
-                <!--<li id="level1_northamerica">North America</li>-->
-                <!--<li id="level1_southamerica">South America</li>-->
-                <!--<li id="level1_asia">Asia</li>-->
-                <!--<li id="level1_africa">Africa</li>-->
-                <!--<li id="level1_oceania">Oceania</li>-->
-            <!--</ul>-->
-            <!--<ul class="level2 europe">-->
-                <!--<li id="level2_europe_germany">Germany</li>-->
-                <!--<li id="level2_europe_france">France</li>-->
-            <!--</ul>-->
-            <!--<ul class="level3 germany">-->
-                <!--<li id="level3_europe_germany_schleswigholstein">Schleswig Holstein</li>-->
-                <!--<li id="level3_europe_germany_hamburg">Hamburg</li>-->
-                <!--<li id="level3_europe_germany_niedersachsen">Niedersachsen</li>-->
-            <!--</ul>-->
-        </div>
+        <div id="list"></div>
         <div>
             <label for="latitude">Latitude</label>
             <input type="text" id="latitude" />
@@ -43,6 +25,9 @@
             <li onclick="$('#latitude').val(53.386186); $('#longitude').val(10.031498);">maschen</li>
             <li onclick="$('#latitude').val(53.542949); $('#longitude').val(10.220976);">glinde</li>
             <li onclick="$('#latitude').val(48.872918); $('#longitude').val(2.301913);">paris</li>
+            <li onclick="$('#latitude').val(40.844726); $('#longitude').val(-74.146232);">new york</li>
+            <li onclick="$('#latitude').val(54.450184); $('#longitude').val(9.816602);">rendsburg eckernfoerde</li>
+            <li onclick="$('#latitude').val(54.790595); $('#longitude').val(9.394170);">flensburg</li>
         </ul>
         <button onclick="checkin()">einchecken</button>
     </body>

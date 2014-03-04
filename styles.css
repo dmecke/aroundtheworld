@@ -4,12 +4,12 @@ ul {
 ul li {
     cursor: pointer;
 }
-ul.level1, ul.level2, ul.level3 li {
+ul.level1, ul.level2, ul.level3, ul.level4 li {
     color: #cccccc;
 }
-ul.level2, ul.level3 {
+ul.level2, ul.level3, ul.level4 {
     display: none;
 }
 li.solved {
-    color: blue;
+    color: blue !important;
 }
