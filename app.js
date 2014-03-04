@@ -98,11 +98,38 @@ function getElementFromLevel3(level1element, level2element, index) {
 
 function createList(base, level, elements) {
     var list = $('<ul class="' + level + ' ' + base + '"></ul>');
+    var subElements = null;
+    var name = '';
     for (var i = 0; i < elements.length; i++) {
-        list.append($('<li id="' + level + '_' + base + '_' + elements[i] + '">' + elements[i] + '</li>'));
+        subElements = getElements(level, base, elements[i]);
+        name = elements[i];
+        if (subElements && subElements.length > 0) {
+            name += ' ( / ' + subElements.length + ')';
+        }
+        list.append($('<li id="' + level + '_' + base + '_' + elements[i] + '">' + name + '</li>'));
     }
 
     return list;
+}
+
+function getElements(level, base, currentElement) {
+    var element = null;
+    if (level == 'level1') {
+        element = level2;
+    } else if (level == 'level2') {
+        element = level3;
+    } else if (level == 'level3') {
+        element = level4;
+    } else if (level == 'level4') {
+        return null;
+    }
+    var parts = base.split('_');
+    for(var i = 0; i < parts.length; i++) {
+        if (parts[i] == 'world') continue;
+        element = element[parts[i]];
+    }
+
+    return element[currentElement];
 }
 
 function findContinentByCountry(country) {
