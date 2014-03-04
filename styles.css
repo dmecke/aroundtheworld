@@ -1,0 +1,15 @@
+ul {
+    list-style-type: none;
+}
+ul li {
+    cursor: pointer;
+}
+ul.level1, ul.level2, ul.level3 li {
+    color: #cccccc;
+}
+ul.level2, ul.level3 {
+    display: none;
+}
+li.solved {
+    color: blue;
+}

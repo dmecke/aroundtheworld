@@ -2,13 +2,48 @@
 <html>
     <head>
         <title>Device Properties Example</title>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    </head>
-    <body>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript" charset="utf-8" src="jquery.1.11.0.js"></script>
         <script type="text/javascript" charset="utf-8" src="app.js"></script>
-        <p id="geolocation">v5 Finding geolocation...</p>
-        <div id="log"></div>
+        <script type="text/javascript" charset="utf-8" src="geodata.js"></script>
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+    </head>
+    <body>
+        <div id="list">
+            <!--<ul class="level1">-->
+                <!--<li id="level1_europe">Europe</li>-->
+                <!--<li id="level1_northamerica">North America</li>-->
+                <!--<li id="level1_southamerica">South America</li>-->
+                <!--<li id="level1_asia">Asia</li>-->
+                <!--<li id="level1_africa">Africa</li>-->
+                <!--<li id="level1_oceania">Oceania</li>-->
+            <!--</ul>-->
+            <!--<ul class="level2 europe">-->
+                <!--<li id="level2_europe_germany">Germany</li>-->
+                <!--<li id="level2_europe_france">France</li>-->
+            <!--</ul>-->
+            <!--<ul class="level3 germany">-->
+                <!--<li id="level3_europe_germany_schleswigholstein">Schleswig Holstein</li>-->
+                <!--<li id="level3_europe_germany_hamburg">Hamburg</li>-->
+                <!--<li id="level3_europe_germany_niedersachsen">Niedersachsen</li>-->
+            <!--</ul>-->
+        </div>
+        <div>
+            <label for="latitude">Latitude</label>
+            <input type="text" id="latitude" />
+        </div>
+        <div>
+            <label for="longitude">Longitude</label>
+            <input type="text" id="longitude" />
+        </div>
+        <ul class="preselection">
+            <li onclick="$('#latitude').val(53.585707); $('#longitude').val(10.079745);">wandsbek</li>
+            <li onclick="$('#latitude').val(53.550397); $('#longitude').val(9.992512);">rathausmarkt</li>
+            <li onclick="$('#latitude').val(53.386186); $('#longitude').val(10.031498);">maschen</li>
+            <li onclick="$('#latitude').val(53.542949); $('#longitude').val(10.220976);">glinde</li>
+            <li onclick="$('#latitude').val(48.872918); $('#longitude').val(2.301913);">paris</li>
+        </ul>
+        <button onclick="checkin()">einchecken</button>
     </body>
 </html>
